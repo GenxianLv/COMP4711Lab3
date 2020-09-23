@@ -9,7 +9,21 @@ and open the template in the editor.
         <meta charset="UTF-8">
         <title></title>
     </head>
-    <body>
+    <style>
+        body{
+            border: 1px solid black;
+            text-align: center;
+            color:blue;
+            font-size:10px;
+        }
+        p{
+            color: black;
+            font-size:20px;
+        }
+
+    </style>
+    <body  >
+        <p>Student</p><hr>
         <?php
       include('Student.php');
 $students = array();
@@ -21,7 +35,10 @@ $first->add_email('work','jdoe@mcdonalds.com');
 $first->add_grade(65);
 $first->add_grade(75);
 $first->add_grade(55);
+$first->add_status('status','Senior');
 $students['j123'] = $first;
+
+
 $second = new Student();
 $second->surname = "Einstein";
 $second->first_name = "Albert";
@@ -31,7 +48,9 @@ $second->add_email('work2','albert@physics.mit.edu');
 $second->add_grade(95);
 $second->add_grade(80);
 $second->add_grade(50);
+$second->add_status('status','Junior');
 $students['a456'] = $second;
+
 $third = new Student();
 $third->surname = "Lv";
 $third->first_name = "Genxian";
@@ -40,7 +59,20 @@ $third->add_email('work1','koao77@163.com');
 $third->add_grade(95);
 $third->add_grade(80);
 $third->add_grade(80);
+$third->add_status('status','Freshman');
 $students['a789'] = $third;
+
+$fourth = new Student();
+$fourth->surname = "Yuan";
+$fourth->first_name = "Jianwei";
+$fourth->add_email('home','1161611156@qq.com');
+$fourth->add_email('work1','ccjd@55.com');
+$fourth->add_grade(95);
+$fourth->add_grade(70);
+$fourth->add_grade(60);
+$fourth->add_status('status','Sophomore');
+$students['a101'] = $fourth;
+
 ksort($students); 
 foreach($students as $student)
 
